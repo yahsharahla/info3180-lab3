@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Artnell Ebanks</title>
+  </head>
+  <body>
+<form action="{{ url_for('contact') }}" method= post class = 'contact'>
+    
+    <p>
+    <label>FromName:<input type="text" name="fromname"><br /> </label>
+      <label>FromAddress:<input type="email" name="fromaddr"><br /> </label>
+    <label>To Name: <input type="text" name="toname"><br></label>
+              
+    <label>Toaddr:<input type="email" name="toaddrs"><br> </label>
+    <label>Subject:<input type = "text"><br></label>
+   
+    <label>ComposeMsg:
+    <textarea rows="5" cols="50" name ="message"> 
+      enter your message here....
+      </textarea></label>
+     <br>
+    
+      
+    <input type="submit" value="send">
+    <input type="reset">
+    </p>
+ </form>
+</body>
+</html>
