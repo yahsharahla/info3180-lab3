@@ -2,28 +2,69 @@
 <html>
   <head>
     <title>Artnell Ebanks</title>
+    <style>
+        h1 {
+    margin: 0.67em 0;
+    font-size: 2em;
+  }
+      button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+      .img-thumbnail {
+        
+  display: inline-block;
+  height: auto;
+  max-width: 10%;
+  padding: 4px;
+  line-height: 1.428571429;
+  background-color: #ECDADA;
+  border: 5px solid #AB1B1B;
+  border-radius: 50%;
+  -webkit-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
+      }      
+        .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 6px 6px;
+  margin: 45px;
+  overflow: visible;
+  border: 0;
+}body {
+    background-color: yellow;
+}
+      
+    .container {
+  position: absolute;
+  left: 480px;
+   margin-bottom: 2cm; 
+   margin-left: 2cm;
+   margin-right: 4cm;
+  }
+     </style>  
   </head>
   <body>
-<form action="{{ url_for('contact') }}" method= post class = 'contact'>
-    
-    <p>
-    <label>FromName:<input type="text" name="fromname"><br /> </label>
-      <label>FromAddress:<input type="email" name="fromaddr"><br /> </label>
-    <label>To Name: <input type="text" name="toname"><br></label>
-              
-    <label>Toaddr:<input type="email" name="toaddrs"><br> </label>
-    <label>Subject:<input type = "text"><br></label>
-   
-    <label>ComposeMsg:
-    <textarea rows="5" cols="50" name ="message"> 
-      enter your message here....
-      </textarea></label>
-     <br>
-    
-      
-    <input type="submit" value="send">
-    <input type="reset">
-    </p>
+    <h1> JUST SEND </h1>
+    <img src = "/static/img/octocat.png"  class = "img-thumbnail"/>
+<div id = "container" class ="sr-only">
+<form action="{{ url_for('contact') }}" method="post"  enctype="multipart/form-data" >
+    From:       {{ form.fromaddr }}</br>
+    From name:  {{form.fromname}}</br>
+    To Name:    {{ form.toname }}</br>
+    To Address: {{form.toaddrs}}</br>
+    Subject:    {{ form.subject }}</br>
+    Message:    {{ form.msg }}</br>
+
+    <input type = "submit"/>
  </form>
+</div >
+<div  >
+  <p class ="container" >please to fill in your information adequately, else the message will not be sent</p>
+</div>
 </body>
 </html>
