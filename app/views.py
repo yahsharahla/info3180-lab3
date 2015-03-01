@@ -38,8 +38,8 @@ def contact():
     """
     messagetosend = message.format(fromname,fromaddr,toname,toaddrs,subject,msg)
   #Credentials (if needed)
-    username = 'artnellebanks@gmail.com'
-    password = 'zszgysigcwoqzoqv'
+    username = ''
+    password = ''
 
     # The actual mail send
     server = smtplib.SMTP('smtp.gmail.com:587')
